@@ -1,0 +1,85 @@
+﻿@model IEnumerable<MVC_Print_PDF.Models.EmployeeInfo>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Print", "PrintAllReport")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EmpName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Salary)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DeptName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Designation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HRA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GrossSalary)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TDS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NetSalary)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmpName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Salary)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DeptName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Designation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HRA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GrossSalary)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TDS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NetSalary)
+        </td>
+        <td>
+            @Html.ActionLink("Print Salary Slip", "PrintSalarySlip", new { id = item.EmpNo })
+        </td>
+    </tr>
+}
+
+</table>
